@@ -45,7 +45,7 @@ jobs:
             export PATH="${{ github.workspace }}/nasm-2.15.05:${{ github.workspace }}/mingw64:${{ github.workspace }}/mingw64/bin:${{ github.workspace }}/msys64/usr/bin:/usr/bin" &&
             cd x264 && 
             g++ --version && 
-            ./configure --enable-static --disable-cli --prefix="$(pwd)/${{ env.installationPath }}" &&
+            ./configure --enable-static --disable-cli --enable-strip --prefix="$(pwd)/${{ env.installationPath }}" &&
             make install
             
       - name: Archive Release
